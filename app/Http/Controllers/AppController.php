@@ -11,6 +11,7 @@ class AppController extends Controller
     //
     public function getAffiliates($filename = 'affiliates.txt'){
         $affiliates = [];
+        return getcwd();
         //open file
         try {
             $file = fopen($this->path.$filename, "r");
