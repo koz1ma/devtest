@@ -10,6 +10,7 @@ class AppController extends Controller
     private $officeLocation = [53.3340285, -6.2535495];
     public function getAffiliates($filename = 'affiliates.txt'){
         $affiliates = [];
+        return dirname(__FILE__);
         //open file
         try {
             $file = fopen($this->path.$filename, "r");
