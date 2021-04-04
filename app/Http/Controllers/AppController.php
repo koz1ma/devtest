@@ -6,12 +6,11 @@ use Illuminate\Http\Request;
 
 class AppController extends Controller
 {
-    private $path = '../storage/app/';
+    private $path = '../../storage/app/';
     private $officeLocation = [53.3340285, -6.2535495];
     //
     public function getAffiliates($filename = 'affiliates.txt'){
         $affiliates = [];
-        return getcwd();
         //open file
         try {
             $file = fopen($this->path.$filename, "r");
