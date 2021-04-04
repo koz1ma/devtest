@@ -12,17 +12,19 @@ class AppController extends Controller
     public function getAffiliates($filename = 'affiliates.txt'){
         $affiliates = [];
         //open file
-        if($file = fopen($this->path.$filename, "r")){
-            //read file line by line and convert from json to array
-            while (($line = fgets($file)) !== false) {
-                $row = (array)json_decode($line);
-                $affiliates[$row['affiliate_id']] = $row;
-            }
-            fclose($file);
-        }else{
-            throw new Exception("File not found on ".getcwd( ).".");
+        try {
+            $file = fopen($this->path.$filename, "r");
         }
-        
+        catch (Exception $e) {
+            echo "File not found on ".getcwd( ).".";
+        }
+
+        //read file line by line and convert from json to array
+        while (($line = fgets($file)) !== false) {
+            $row = (array)json_decode($line);
+            $affiliates[$row['affiliate_id']] = $row;
+        }
+        fclose($file);
         // sort array by id ASC
         ksort($affiliates); 
         // call function to search nearbyAffiliates
