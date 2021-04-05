@@ -57,6 +57,9 @@ class AppController extends Controller
         $dist = acos(min(max($dist,-1.0),1.0)); 
         $dist = rad2deg($dist);
         //distance in Km
+        //number of minutes in a degree:60
+        //number of statute miles in a nautical mile:1.1515 - One nautical mile is the length of one minute of latitude
+        //number of kilometers in a mile: 1.609344
         $distance = ($dist * 60 * 1.1515)* 1.609344;
         return $distance;
     }
