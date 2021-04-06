@@ -6,6 +6,8 @@ You need to have laravel 8 installed to be able to run this code and use the com
 
 The formula used is available on https://en.wikipedia.org/wiki/Great-circle_distance
 
+Most of the code is located on app/Http/Controllers/AppController.php
+
 You can access this code running live on https://gcddevtest.herokuapp.com/
 
 
