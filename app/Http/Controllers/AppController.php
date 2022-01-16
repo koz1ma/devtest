@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class AppController extends Controller
 {
     private $path = '../storage/app/';
+    //private $path = '/app/storage/app/';
     private $officeLocation = [53.3340285, -6.2535495];
     public function getAffiliates($filename = 'affiliates.txt'){
         $affiliates = [];
